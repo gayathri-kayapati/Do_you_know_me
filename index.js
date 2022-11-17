@@ -36,3 +36,4 @@ var questions = [
 for (var i = 0; i < questions.length; i++) {
   frdsQuiz(questions[i].question, questions[i].answer);
 }
+console.log("YAY! You SCORED: ", score);
