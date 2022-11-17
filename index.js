@@ -1,6 +1,24 @@
 var readlineSync = require("readline-sync");
-var userName = readlineSync.question("May I know your name?\n");
-console.log("Welcome " + userName + "! " + "Do you know Gayathri?");
+var score = 0;
+function welcome() {
+  var userName = readlineSync.question("May I know your name?\n");
+  console.log("Welcome " + userName + "! " + "Do you know Gayathri?");
+}
+var score = 0;
+var highScores = [
+  {
+    name: "Pranavi",
+    score: 4,
+  },
+  {
+    name: "Chinna",
+    score: 3,
+  },
+  {
+    name: "Lalitha",
+    score: 4,
+  },
+];
 function frdsQuiz(question, answer) {
   var userAnswer = readlineSync.question(question);
   if (userAnswer.toUpperCase() === answer.toUpperCase()) {
@@ -33,7 +51,18 @@ var questions = [
     answer: "Bangalore",
   },
 ];
-for (var i = 0; i < questions.length; i++) {
-  frdsQuiz(questions[i].question, questions[i].answer);
+function game() {
+  for (var i = 0; i < questions.length; i++) {
+    frdsQuiz(questions[i].question, questions[i].answer);
+  }
 }
-console.log("YAY! You SCORED: ", score);
+function showScores() {
+  console.log("YAY! You SCORED: ", score);
+  console.log(
+    "Check out the high scores, if you should be there ping me and I'll update it"
+  );
+  highScores.map((score) => console.log(score.name, " : ", score.score));
+}
+welcome();
+game();
+showScores();
