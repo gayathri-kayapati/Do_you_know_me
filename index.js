@@ -33,3 +33,6 @@ var questions = [
     answer: "Bangalore",
   },
 ];
+for (var i = 0; i < questions.length; i++) {
+  frdsQuiz(questions[i].question, questions[i].answer);
+}
