@@ -1,6 +1,16 @@
 var readlineSync = require("readline-sync");
 var userName = readlineSync.question("May I know your name?\n");
 console.log("Welcome " + userName + "! " + "Do you know Gayathri?");
+function frdsQuiz(question, answer) {
+  var userAnswer = readlineSync.question(question);
+  if (userAnswer.toUpperCase() === answer.toUpperCase()) {
+    console.log("You're right");
+    score++;
+  } else {
+    console.log("You're wrong");
+  }
+  console.log("Your current score is " + score);
+}
 var questions = [
   {
     question: "What is my husband's name?\n",
